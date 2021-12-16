@@ -13,6 +13,7 @@ sys.setrecursionlimit(2050)
 
 with open('puzzle.txt') as f:
     mylist = [line.rstrip('\n') for line in f]
+    f.close
 
 
 
