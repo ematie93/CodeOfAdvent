@@ -1,3 +1,13 @@
+##############################
+"""
+This is the first exercise for Advent of Code Challenge
+This exercise is called Sonar Sweep
+Exercise can be found here:
+
+https://adventofcode.com/2021/day/1
+"""
+
+
 import sys
 sys.setrecursionlimit(2050)
 
