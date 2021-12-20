@@ -7,26 +7,23 @@ Exercise can be found here:
 https://adventofcode.com/2021/day/1
 """
 
-
-import sys
-sys.setrecursionlimit(2050)
-
 with open('puzzle.txt') as f:
-    mylist = [line.rstrip('\n') for line in f]
-    f.close
+    mylist = [int(line.rstrip('\n')) for line in f]
+    f.close()
+######### ITS SOOOOOO IMPORTANT TO CONVERT IT TO INTS, STR COMPARASION COMPARES UNICODE BYTS!!!!!!!!!!!
 
+limit = len(mylist)
+countInc = 0
 
-
-def sonar(puzzle, position, increesedValues = []):
-    puzzleLen = len(puzzle) - 1
-    if puzzle.index(puzzle[position]) == puzzleLen:
-        print("No more data")
-        print("There where " + str(len(increesedValues)) + " increesed values")
-
+#### Part A
+for i in range(1, (limit)):
+    
+    if int(mylist[i - 1]) <= int(mylist[i]):
+        print(str(mylist[i-1])+ " < " +  mylist[i])
+        countInc += 1
     else:
-        if puzzle[position + 1] > puzzle[position]:
-            increesedValues.append(puzzle[position + 1])
+        print(str(mylist[i-1])+ " > " +  mylist[i])
 
-        return sonar(puzzle, position + 1, increesedValues)
 
-sonar(mylist, 10)
+##### Part B
+print(countInc)
